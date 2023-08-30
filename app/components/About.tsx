@@ -3,11 +3,15 @@ import Content from "./Typography/Content";
 import SectionTitle from "./Typography/SectionTitle";
 import Title from "./Typography/Title";
 
-const profileImg = "./img/profile-img-bu.webp";
+import { TypeAnimation } from "react-type-animation";
+
+const profileImg = "./img/profile-img-square.webp.jpg";
+
+
 const About = () => {
   return (
     <>
-      <SectionTitle>About me</SectionTitle>
+      <SectionTitle>About Jamaicancoder</SectionTitle>
       <div className="flex flex-wrap w-full h-full">
         <Image />
         <Info />
@@ -34,19 +38,21 @@ const Info = () => {
       <Title>Full-Stack Software Engineer</Title>
       <div className="flex flex-wrap">
         <Content>
-          Meet Kevin, a software engineer with 5+ years in RF test engineering
-          who self-taught programming to improve work productivity. He graduated
-          from Fullstack Academy, a Forbes' top 10 software engineering
-          bootcamp, and currently ranks top 8.4% among 393,066 global
+          Meet Wayne, a software engineer at Verisk Analytics with 2+ years in software engineering.
+          A graduate from the Marcy Lab School Software Engineering Bootcamp, a 1-year alternative to college.Wayne currently ranks in the top 8.4% among 393,066 global
           contestants in LeetCode's Global Competitive programming competition.
-          Kevin values collaboration, positivity, and a non-toxic work
+          Wayne values collaboration, positivity, and a non-toxic work
           environment, and enjoys researching solutions and debugging. He's
           passionate about contributing to industries with a positive impact on
           people's well-being and could be a great addition to your team.
         </Content>
+ 
       </div>
-    </div>
+   
+       
+          </div>
   );
 };
 
 export default About;
+
