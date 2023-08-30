@@ -7,8 +7,9 @@ import { TypeAnimation } from "react-type-animation";
 import Calendly from "./Calendly";
 import LoadingTriangle from "./Loading/LoadingTriangle";
 import ButtonWrapper from "./Button/ButtonWrapper";
-const profileImg = "./img/profile-img-bu.webp";
+const profileImg = "./img/profile-img.jpg";
 const KevinAvatar = lazy(() => import("./KevinAvatar"));
+import { infos,quotes } from "../data/about";
 
 const Landing = () => {
   const [is3DModelActivated, setIs3DModelActivated] = useState(false);
@@ -17,6 +18,10 @@ const Landing = () => {
     setIs3DModelActivated(!is3DModelActivated);
   }
 
+  const sequence = [
+    ...infos.map((info) => [`${info.key}: ${info.value} 🧠`, 2000]),
+    ...quotes.map((quote) => [quote + "🧐", 2000] )
+  ];
   return (
     <>
       <div className="flex flex-col items-center h-full pt-24 md:flex-row">
@@ -36,7 +41,7 @@ const Landing = () => {
               sequence={[
                 "👋 Hey there!",
                 2000,
-                "👈 I'm Kevin",
+                "👈 I'm Wayne",
                 2000,
                 "I'm driven and enthusiastic 🧠",
                 1000,
@@ -57,21 +62,47 @@ const Landing = () => {
                 {is3DModelActivated ? "My Photo" : "My 3D Model"}
               </ButtonWrapper>
             </button>
-            {/* <ContactButton
+            <ContactButton
               text="Linkedin"
               textColor="text-white"
               buttonColor="bg-sky-600"
-              linkURL="https://www.linkedin.com/in/kevinyu2468/"
-            /> */}
+              linkURL="https://www.linkedin.com/in/waynemarch/"
+            />
 
             <ContactButton
               text="GitHub"
               textColor="text-white"
               buttonColor="bg-black dark:bg-neutral-800"
-              linkURL="https://github.com/KYu-2468"
+              linkURL="https://github.com/marcwayn8"
             />
 
+<ContactButton
+              text="Medium"
+              textColor="text-white"
+              buttonColor="bg-gray dark:bg-neutral-800"
+              linkURL="https://medium.com/@juniormarch48"
+            />
+    <ContactButton
+              text="Spotify"
+              textColor="text-white"
+              buttonColor="bg-black dark:bg-neutral-800"
+              linkURL="https://open.spotify.com/show/2SGKYo1m3F74IDzeFb7sh3?si=112d2be093c34efb"
+            />
+ 
             <Calendly />
+          </div>
+          <div className="flex flex-col items-center w-1/2 h-full px-2 pt-12 text-2xl">
+           <div className="h-9">
+       <TypeAnimation
+         className="text-xl md:text-3xl"
+         sequence={[
+          ...infos.map((info) => `${info.key}: ${info.value} 🧠`, 2000), ...quotes.map((quote) => quote + "🧐", 2000)
+        ]}
+         wrapper="span"
+         cursor={true}
+         repeat={Infinity}
+       />
+ </div>
           </div>
         </div>
       </div>
